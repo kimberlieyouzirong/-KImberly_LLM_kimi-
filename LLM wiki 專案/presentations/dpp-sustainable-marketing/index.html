@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>數位產品護照 (DPP) 在永續行銷與循環經濟中的機制與競爭優勢</title>
+  
+  <!-- Reveal.js & KaTeX CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  
+  <!-- Google Fonts: Editorial & Modern Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Noto+Sans+TC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================
+       Ins 風格 × 低飽和度莫蘭迪色系 × 創新雜誌感 Design System
+       ========================================================== */
+    :root {
+      --bg-canvas: #F7F6F2;           /* 燕麥暖白底色 */
+      --bg-card: rgba(255, 255, 255, 0.92);
+      --bg-card-subtle: #EFECE6;
+      --text-main: #2D3136;          /* 沉穩炭灰 */
+      --text-muted: #6B7280;         /* 柔和次級字 */
+      --color-sage: #7C8B7E;         /* 低飽和鼠尾草綠 (創新主色) */
+      --color-clay: #A07869;         /* 莫蘭迪復古陶土色 */
+      --color-slate: #667A8C;        /* 霧面灰藍 */
+      --color-sand: #D5CEC3;         /* 暖沙色 */
+      --color-border: rgba(43, 49, 57, 0.08);
+      --shadow-soft: 0 10px 30px rgba(45, 49, 54, 0.04);
+      --shadow-hover: 0 14px 38px rgba(45, 49, 54, 0.08);
+      --radius-card: 20px;
+      --radius-pill: 999px;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', 'Noto Sans TC', -apple-system, sans-serif;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .reveal {
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--text-main);
+      background-color: var(--bg-canvas);
+    }
+
+    .reveal .slides {
+      text-align: left;
+    }
+
+    .reveal .slides section {
+      padding: 24px 36px;
+      box-sizing: border-box;
+      height: 100%;
+    }
+
+    /* 頂部導覽標記（Ins 雜誌風格標籤） */
+    .ins-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 13px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 10px;
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      background: rgba(124, 139, 126, 0.15);
+      color: var(--color-sage);
+      border: 1px solid rgba(124, 139, 126, 0.3);
+    }
+
+    .pill-clay {
+      background: rgba(160, 120, 105, 0.12);
+      color: var(--color-clay);
+      border-color: rgba(160, 120, 105, 0.3);
+    }
+
+    .pill-slate {
+      background: rgba(102, 122, 140, 0.12);
+      color: var(--color-slate);
+      border-color: rgba(102, 122, 140, 0.3);
+    }
+
+    /* 標題層次 */
+    h1.editorial-title {
+      font-family: 'Playfair Display', 'Noto Sans TC', serif;
+      font-size: 42px;
+      font-weight: 600;
+      line-height: 1.18;
+      color: var(--text-main);
+      margin: 8px 0 14px 0;
+      letter-spacing: -0.02em;
+    }
+
+    h2.slide-title {
+      font-family: 'Playfair Display', 'Noto Sans TC', serif;
+      font-size: 32px;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--text-main);
+      margin: 0 0 6px 0;
+      letter-spacing: -0.01em;
+    }
+
+    p.slide-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin: 0 0 18px 0;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    /* 卡片與佈局容器 */
+    .ins-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .ins-grid-3 {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .ins-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--color-border);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      transition: all 0.25s ease;
+    }
+
+    .ins-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+
+    .ins-card-subtle {
+      background: var(--bg-card-subtle);
+      border-color: rgba(0,0,0,0.04);
+    }
+
+    .card-accent-sage {
+      border-left: 4px solid var(--color-sage);
+    }
+
+    .card-accent-clay {
+      border-left: 4px solid var(--color-clay);
+    }
+
+    .card-accent-slate {
+      border-left: 4px solid var(--color-slate);
+    }
+
+    .card-header {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+
+    .card-body {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #4A5059;
+    }
+
+    /* 要點列表清單 */
+    ul.ins-list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: #3F444D;
+    }
+
+    ul.ins-list li {
+      margin-bottom: 6px;
+    }
+
+    /* LaTeX 公式展示卡片 */
+    .formula-box {
+      background: #F0ECE4;
+      border: 1px solid rgba(160, 120, 105, 0.22);
+      border-radius: 12px;
+      padding: 10px 16px;
+      margin: 10px 0;
+      text-align: center;
+      color: #2F3337;
+      font-size: 17px;
+    }
+
+    /* 底部操作說明與備忘提示 */
+    .ins-footer {
+      position: absolute;
+      bottom: 14px;
+      left: 36px;
+      right: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--color-border);
+      padding-top: 8px;
+    }
+
+    .shortcut-tip {
+      background: #E8E4DC;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 11px;
+      color: #555;
+    }
+
+    /* 一鍵下載按鈕卡 */
+    .download-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--text-main);
+      color: #FFF !important;
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 12px;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .download-pill-btn:hover {
+      background: var(--color-sage);
+      transform: translateY(-1px);
+    }
+
+    /* 模擬數位產品護照 UI 視覺卡 */
+    .passport-mock {
+      background: #FFFFFF;
+      border-radius: 18px;
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .passport-badge {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed #E2DDD5;
+      padding-bottom: 8px;
+    }
+    .passport-metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      padding: 4px 0;
+    }
+    .metric-bar-bg {
+      width: 110px;
+      height: 7px;
+      background: #EFECE6;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .metric-bar-fill {
+      height: 100%;
+      background: var(--color-sage);
+      border-radius: 4px;
+    }
+
+    /* 目錄項風格 */
+    .agenda-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 18px;
+      background: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-soft);
+      transition: all 0.2s ease;
+    }
+    .agenda-item:hover {
+      border-color: var(--color-sage);
+      transform: translateX(4px);
+    }
+    .agenda-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--color-clay);
+      line-height: 1;
+      min-width: 34px;
+    }
+    .agenda-content h4 {
+      margin: 0 0 3px 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+    .agenda-content p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Reveal.js 進度條與控制鍵美化 */
+    .reveal .progress {
+      background: rgba(0,0,0,0.06);
+      height: 3px;
+    }
+    .reveal .progress span {
+      background: var(--color-sage);
+    }
+    .reveal .slide-number {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 11px;
+      color: var(--text-muted);
+      background: transparent;
+      right: 36px;
+      bottom: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+      <!-- ========================================================
+           Slide 1: 封面
+           ======================================================== -->
+      <section>
+        <div class="ins-header">
+          <span>Antigravity Research Series &bull; 2026</span>
+          <span class="pill-badge">Innovation Paradigm</span>
+        </div>
+        
+        <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 24px; align-items: center; margin-top: 15px;">
+          <div>
+            <span style="font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-clay); font-weight: 700;">
+              Strategic Research Note &bull; Issue 01
+            </span>
+            <h1 class="editorial-title">
+              數位產品護照 (DPP)<br>
+              <span style="font-size: 28px; font-weight: 400; color: var(--color-slate); font-style: italic;">
+                從法規合規走向永續行銷與循環經濟的戰略重塑
+              </span>
+            </h1>
+            <p style="font-size: 15px; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+              以歐盟 ESPR 2024 與最新理論文獻為依據，解密如何以「訊號理論」打破綠色信任屬性困局，釋放消費者支付溢價並重塑企業商業模式活動系統。
+            </p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <span class="pill-badge"># 資訊不對稱</span>
+              <span class="pill-badge pill-clay"># 訊號分離均衡</span>
+              <span class="pill-badge pill-slate"># 歐盟 ESPR</span>
+              <span class="pill-badge"># 閉環價值共創</span>
+            </div>
+          </div>
+
+          <!-- 右側視覺插圖：數位護照晶片卡意象 -->
+          <div class="passport-mock">
+            <div class="passport-badge">
+              <span style="font-weight: 700; font-size: 13px; color: var(--color-slate);">EU DPP VERIFIED PASS</span>
+              <span class="pill-badge" style="font-size: 10px; padding: 2px 8px;">AUDITED 2026</span>
+            </div>
+            <div style="display: flex; gap: 14px; align-items: center;">
+              <!-- 仿 QR Code 視覺 -->
+              <svg width="68" height="68" viewBox="0 0 24 24" fill="none" stroke="#2D3136" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="background: #F4F2EE; padding: 4px; border-radius: 8px;">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+                <path d="M7 7h.01M17 7h.01M7 17h.01M17 17h.01"></path>
+              </svg>
+              <div style="font-size: 12px; color: var(--text-main); line-height: 1.5;">
+                <strong>Item ID:</strong> EU-BAT-9082X<br>
+                <strong>Batch:</strong> NetZero Tier-1<br>
+                <strong>Assurance:</strong> ISO 14040 Certified
+              </div>
+            </div>
+            <div class="passport-metric">
+              <span>再生材料佔比</span>
+              <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 82%;"></div></div>
+              <span style="font-weight: 600;">82%</span>
+            </div>
+            <div class="passport-metric">
+              <span>產品可維修性</span>
+              <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 94%; background: var(--color-slate);"></div></div>
+              <span style="font-weight: 600;">9.4/10</span>
+            </div>
+            <div class="passport-metric">
+              <span>產品碳足跡 (LCA)</span>
+              <div class="metric-bar-bg"><div class="metric-bar-fill" style="width: 25%; background: var(--color-clay);"></div></div>
+              <span style="font-weight: 600;">-75% CO₂e</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="ins-footer">
+          <span>Presentation Engine &bull; Reveal.js × KaTeX</span>
+          <span>按 <span class="shortcut-tip">S</span> 開啟演講備忘錄 ｜ 按 <span class="shortcut-tip">F</span> 全螢幕 ｜ 按 <span class="shortcut-tip">O</span> 總覽</span>
+        </div>
+
+        <aside class="notes">
+          【講稿備忘錄】
+          各位好，今天我們要探討的是歐盟與全球永續科技領域最受矚目的制度創新——數位產品護照（Digital Product Passport, DPP）。
+          過去大家往往將 DPP 視為供應鏈工程師或法規法務部門的合規負擔；然而今天我們要從最新發表的理論文獻切入，揭示 DPP 如何在需求端成為瓦解漂綠、釋放消費者支付溢價、並重塑企業商業模式活動系統的戰略利器。
+        </aside>
+      </section>
+
+      <!-- ========================================================
+           Slide 2: 目錄 (Table of Contents / Agenda) [NEW!]
+           ======================================================== -->
+      <section>
+        <div class="ins-header">
+          <span>02. Contents & Roadmap</span>
+          <span class="pill-badge pill-slate">Agenda</span>
+        </div>
+        
+        <h2 class="slide-title">研究大綱與章節導覽</h2>
+        <p class="slide-subtitle">系統拆解數位產品護照從市場失靈困境到商業模式閉環的推導邏輯</p>
+
+        <div class="ins-grid-2" style="gap: 14px;">
+          <div class="agenda-item">
+            <div class="agenda-num">01</div>
+            <div class="agenda-content">
+              <h4>市場失靈：信任屬性與逆向淘汰</h4>
+              <p>阿克洛夫折價期望值與漂綠氾濫之核心成因</p>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="agenda-num">02</div>
+            <div class="agenda-content">
+              <h4>典範轉移：DPP 走向需求端行銷</h4>
+              <p>從被動法規遵循轉化為單品級可信身分戰略資產</p>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="agenda-num">03</div>
+            <div class="agenda-content">
+              <h4>訊號機制：分離均衡與審計邊界</h4>
+              <p>Spence 成本不對稱不等式與第三方獨立確信基石</p>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="agenda-num">04</div>
+            <div class="agenda-content">
+              <h4>顧客關係三維引擎：透明、信任、賦能</h4>
+              <p>系統性解鎖全生命週期互動與價值共創飛輪</p>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="agenda-num">05</div>
+            <div class="agenda-content">
+              <h4>核心研究命題：行銷、循環與戰略 (P1~P6)</h4>
+              <p>支付溢價 (WTP)、二階段競爭優勢與精準綠色分群</p>
+            </div>
+          </div>
+
+          <div class="agenda-item">
+            <div class="agenda-num">06</div>
+            <div class="agenda-content">
+              <h4>商業模式重構與前沿文獻推薦</h4>
+              <p>Amit & Zott NICE 活動系統整合與官方文獻下載</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ins-footer">
+          <span>Table of Contents &bull; 6 Core Modules</span>
+          <span>按方向鍵或空白鍵進入第 1 章</span>
+        </div>
+
+        <aside class="notes">
+          【講稿備忘錄】
+          這份報告分為六大模組：
+          首先剖析『信任屬性』帶來的市場失靈，接著探討 DPP 如何將後台 IT 轉為前台行銷戰略；
+          第三，用訊號理論數學模型解密分離均衡；
+          第四，拆解透明、信任與賦能三維引擎；
+          第五，推導六大核心行銷與戰略命題；
+          最後結合 NICE 商業模式活動系統，並提供延伸閱讀的官方文獻。
+        </aside>
+      </section>
+
+      <!-- ========================================================
+           Slide 3: 市場失靈的根本癥結
+           ======================================================== -->
+      <section>
+        <div class="ins-header">
+          <span>03. Problem Definition</span>
+          <span class="pill-badge pill-clay">Market Failure</span>
+        </div>
+        
+        <h2 class="slide-title">無從驗證的綠色宣稱：信任屬性與逆向淘汰</h2>
+        <p class="slide-subtitle">為何企業投入高額成本進行綠色轉型，消費者卻往往持懷疑態度且不願買單？</p>
+
+        <div class="ins-grid-3">
+          <div class="ins-card">
+            <div class="card-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+              Search Attributes
+            </div>
+            <div class="card-title">搜尋屬性 (Search)</div>
+            <div class="card-body">
+              <strong>購買前可輕易查驗。</strong><br>
+              消費者可依外觀、價格、尺寸規格自行辨識。<br>
+              <span style="color: var(--text-muted); font-size: 12px;">例：衣服顏色、手機螢幕尺寸。</span>
+            </div>
+          </div>
+
+          <div class="ins-card">
+            <div class="card-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+              Experience Attributes
+            </div>
+            <div class="card-title">體驗屬性 (Experience)</div>
+            <div class="card-body">
+              <strong>購買並使用後可知。</strong><br>
+              消費者透過實際使用即可客觀感知其品質優劣。<br>
+              <span style="color: var(--text-muted); font-size: 12px;">例：耳機音質、電池續航表現。</span>
+            </div>
+          </div>
+
+          <div class="ins-card card-accent-clay" style="background: rgba(160, 120, 105, 0.08);">
+            <div class="card-header" style="color: var(--color-clay);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              Credence Attributes ⚠️
+            </div>
+            <div class="card-title" style="color: var(--color-clay);">信任屬性 (Credence)</div>
+            <div class="card-body">
+              <strong>使用後依然完全無法查證！</strong><br>
+              永續屬性（回收料%、人權無童工、淨零排碳）純屬信號，缺乏檢驗依據。<br>
+              <span style="font-size: 12px; font-weight: 600;">導致綠洗氾濫與集體折價。</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="formula-box">
+          $$\text{阿克洛夫折價期望值：} \quad \mathbb{E}[V] = q \cdot V_{\text{Green}} + (1 - q) \cdot V_{\text{Fake}}$$
+          <div style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">
+            當市場充斥廉價「漂綠 (Greenwashing)」時，真假產品外觀無異，市場對所有環保宣稱無差別打折，引發劣幣逐良幣。
+          </div>
+        </div>
+
+        <aside class="notes">
+          【講稿備忘錄】
+          為什麼消費者不相信綠色廣告？核心在於資訊經濟學中的『信任屬性』。
+          買衣服時，肉眼看不出棉花是否有機；買電池時，摸不著裡面的鋰回收率。當資訊完全不透明時，市場就會陷入阿克洛夫的『檸檬市場』：真假產品無差別折價，最終守規矩的好企業被淘汰，市場充斥廉價的漂綠公關宣傳。
+        </aside>
+      </section>
+
+      <!-- ========================================================
+           Slide 4: 典範轉移：DPP 的理論化重構
+           ======================================================== -->
+      <section>
+        <div class="ins-header">
+          <span>04. Paradigm Shift</span>
+          <span class="pill-badge">Strategic Repositioning</span>
+        </div>
+        
+        <h2 class="slide-title">超越供應鏈工程：DPP 在需求端的戰略崛起</h2>
+        <p class="slide-subtitle">從法務合規與供應鏈 IT，躍遷至消費者行為與永續行銷主陣地</p>
+
+        <div class="ins-grid-2">
+          <div class="ins-card ins-card-subtle">
+            <div class="card-header">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              Traditional SCM View
+            </div>
+            <div class="card-title" style="color: var(--text-muted);">供給端與技術導向 (SCM)</div>
+            <ul class="ins-list">
+              <li>被動視為應付法規的行政合規成本 (Compliance Cost)。</li>
+              <li>關注重心在後台物聯網追蹤與物流數據流轉。</li>
+              <li>傳統生態標籤（Eco-labels）屬於靜態貼紙，維度單一且極易被混淆模仿。</li>
+            </ul>
+          </div>
+
+          <div class="ins-card card-accent-sage" style="background: rgba(124, 139, 126, 0.08);">
+            <div class="card-header" style="color: var(--color-sage);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path></svg>
+              Modern Marketing View
+            </div>
+            <div class="card-title" style="color: var(--color-sage);">需求端與行銷導向 (Marketing)</div>
+            <ul class="ins-list">
+              <li><strong>單品級 (Item-level) 身分證</strong>：全生命週期可信透明。</li>
+              <li><strong>高階可信訊號</strong>：以歐盟法規（ESPR 2024/1781）與獨立審計背書。</li>
+              <li><strong>終生用戶互動通道</strong>：串聯保固、自主維修與二手回收閉環。</li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="notes">
+          【講稿備忘錄】
+          本篇研究最具啟發性的轉變，就是把 DPP 從『後台的供應鏈工具』拉到『前台的行銷與戰略利器』。
+          過去大家貼一張綠色環保標章貼紙，誰都可以印，消費者早就審美疲勞。而 DPP 是歐盟強制規範、每件產品獨立序號、記錄全生命週期的數位身分證，這徹底改變了品牌與消費者的溝通維度。
+        </aside>
+      </section>
+
+      <!-- ========================================================
+           Slide 5: 訊號機制：分離均衡與主邊界條件
+           ======================================================== -->
+      <section>
+        <div class="ins-header">
+          <span>05. Theoretical Mechanism</span>
+          <span class="pill-badge pill-slate">Signaling Theory</span>
+        </div>
+        
+        <h2 class="slide-title">以高昂偽造代價打破偽善：分離均衡條件</h2>
+        <p class="slide-subtitle">依據 Spence (1973) 訊號理論，可信訊號必須具備「偽造邊際成本不對稱性」</p>
+
+        <div class="formula-box">
+          $$\Large C_G < \Delta P < C_F$$
+          <div style="font-size: 13px; text-align: left; margin-top: 8px; color: #444; line-height: 1.6;">
+            &bull; <strong>$C_G$</strong>：真實綠色企業發送經審計 DPP 之成本（原本即符合規範，邊際改造成本低）<br>
+            &bull; <strong>$C_F$</strong>：漂綠企業偽造或符合完整生命週期審計之代價（供應鏈改造極其高昂且伴隨巨額法規罰款）<br>
+            &bull; <strong>$\Delta P$</strong>：消費者對經審計真實環保產品願意支付之價格溢價（WTP Premium）
+          </div>
+        </div>
+
+        <div class="ins-card card-accent-clay">
+          <div class="card-header" style="color: var(--color-clay);">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Master Boundary Condition 核心邊界條件
+          </div>
+          <div class="card-title" style="font-size: 16px;">技術防偽不等於事實真實：獨立第三方審計才是基石</div>
+          <div class="card-body" style="font-size: 13px;">
+            區塊鏈等分散式帳本技術僅能保證<strong>「上鏈後的資料不可篡改」</strong>，無法查驗<strong>「資料輸入當下的真實性」</strong>。
+            若缺乏獨立審計與法規確信機制（Independent Assurance），DPP 反而會成為披著高科技外衣的新型漂綠載體。
+          </div>
+        </div>
+
+        <aside class="notes">
+          【講稿備忘錄】
+          請大家注意這個著名的不等式 $C_G < \Delta P < C_F$。
+          訊號要能發揮作用，關鍵是造假成本 $C_F$ 必須高於市場溢價，讓假貨賣家理性放棄偽造，達成『分離均衡』。
+          同時要打破一個迷思：區塊鏈不能防止說謊，它只能保證說過的話不被改掉。因此『獨立第三方環境審計』才是整個 DPP 體系成立的核心命脈！
+        </aside>
+      </section>
+
+      <!-- ========================================================
+           Slide 6: DPP 的三大作用機制
+           ======================================================== -->
+      <section>
+        <div class="ins-header">
+          <span>06. Core Mechanisms</span>
+          <span class="pill-badge">Systemic Triad</span>
+        </div>
+        
+        <h2 class="slide-title">重構顧客關係的三維引擎</h2>
+        <p class="slide-subtitle">透明、信任、賦能三位一體，驅動永續行銷飛輪</p>
+
+        <div class="ins-grid-3">
+          <div class="ins-card card-accent-sage">
+            <div class="card-header" style="color: var(--color-sage);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              01 &bull; Transparency
+            </div>
+            <div class="card-title">透明度機制</div>
+            <div class="card-body">
+              <strong>打破資訊黑箱</strong><br>
+              將原料產地、碳足跡、有害物質清單全流程可視化，將原本無法查驗的「信任屬性」直接轉為客觀可見數據。
+            </div>
+          </div>
+
+          <div class="ins-card card-accent-slate">
+            <div class="card-header" style="color: var(--color-slate);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              02 &bull; Credibility
+            </div>
+            <div class="card-title">信任構建機制</div>
+            <div class="card-body">
+              <strong>瓦解消費者防禦</strong><br>
+              結合歐盟法規懲處力與獨立審計確信，使綠色宣稱不再是公關口號，確立可信的市場分離均衡。
+            </div>
+          </div>
+
+          <div class="ins-card card-accent-clay">
+            <div class="card-header" style="color: var(--color-clay);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+              03 &bull; Engagement
+            </div>
+            <div class="card-title">賦能參與機制</div>
+            <div class="card-body">
+              <strong>串聯全生命週期</strong><br>
+              賦予消費者維修指南、二手回購估價與就近回收點，將一次性買賣升級為閉環長效互動。
+            </div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          【講稿備忘錄】
+          這三個機制層層遞進：
+          第一步，透明度打破了供應鏈暗箱；
+          第二步，第三方審計轉化為真實信任；
+          第三步，也是最具商業想像力的一環——賦能參與。透過掃描護照，用戶能獲取原廠維修零件、查詢回收站點，甚至預估二手轉賣殘值，真正形成價值共創。
+        </aside>
+      </section>
+
+      <!-- ========================================================
+           Slide 7: 行銷核心命題：消減綠洗與支付溢價 (P1 & P2)
+           ======================================================== -->
+      <section>
+        <div class="ins-header">
+          <span>07. Marketing Propositions</span>
+          <span class="pill-badge pill-clay">Consumer Value</span>
+        </div>
+        
+        <h2 class="slide-title">從信任到真金白銀：P1 與 P2 命題推導</h2>
+        <p class="slide-subtitle">依據理性行為理論（Fishbein & Ajzen），可信資訊如何直接轉化為購買行為？</p>
+
+        <div class="ins-grid-2">
+          <div class="ins-card">
+            <div class="pill-badge" style="margin-bottom: 8px;">Proposition 1</div>
+            <div class="card-title">消減漂綠認知與提升公信力</div>
+            <div class="card-body">
+              經第三方獨立驗證之 DPP 能顯著降低消費者對綠色宣傳的防衛心態，提升對品牌環保主張之可信度。<br><br>
+              <div style="background: #F4F2EE; padding: 10px; border-radius: 8px; font-size: 13px; color: #444;">
+                ⚡ <strong>關鍵調節</strong>：高環境衝擊品類（如紡織、電池）效果最顯著；但介面過於複雜會導致信號衰減。
+              </div>
+            </div>
+          </div>
+
+          <div class="ins-card card-accent-sage">
+            <div class="pill-badge pill-clay" style="margin-bottom: 8px;">Proposition 2</div>
+            <div class="card-title">激發消費者支付溢價 (WTP)</div>
+            <div class="card-body">
+              當消費者確信永續屬性真實不虛時，感知產品價值顯著提升，激發實質的<strong>「價格溢價支付意願 (WTP Premium)」</strong>與購買意向。<br><br>
+              <div style="background: rgba(124, 139, 126, 0.12); padding: 10px; border-radius: 8px; font-size: 13px; color: #2B382D;">
+                ⚡ <strong>關鍵調節</strong>：對於過往持高度懷疑（Prior Scepticism）的消費者，經審計之 DPP 帶來的轉化邊際效益最大。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          【講稿備忘錄】
+          很多行銷主管常質疑：消費者真的會為了環保多付錢嗎？
+          命題 P1 和 P2 給出的答案是：『消費者不是不願付溢價，是不願意為騙局付溢價』。只要透過經審計的 DPP 消除綠洗疑慮，消費者的支付意願會顯著反彈。但大家切記一個調節變數——資訊易讀性（Usability），千萬別把 DPP 做成給稽核員看的天書，必須是用戶友善的視覺介面。
+        </aside>
+      </section>
+
+      <!-- ========================================================
+           Slide 8: 循環經濟命題：賦能與價值共創 (P3 & P4)
+           ======================================================== -->
+      <section>
+        <div class="ins-header">
+          <span>08. Circular Economy</span>
+          <span class="pill-badge pill-slate">Value Co-Creation</span>
+        </div>
+        
+        <h2 class="slide-title">終結線性消費：P3 與 P4 價值共創閉環</h2>
+        <p class="slide-subtitle">基於服務主導邏輯 (Vargo & Lusch 2004)，消費者從「終端買家」進化為「循環夥伴」</p>
+
+        <div class="ins-grid-2">
+          <div class="ins-card">
+            <div class="pill-badge" style="margin-bottom: 8px;">Proposition 3</div>
+            <div class="card-title">賦能循環消費與生命週期延長</div>
+            <div class="card-body">
+              DPP 提供詳實的拆解圖解、維修指南與成分資訊，有效激發消費者在<strong>使用期自主維修、二手再利用、以及廢棄期精準回收</strong>之行為。
+            </div>
+          </div>
+
+          <div class="ins-card card-accent-slate">
+            <div class="pill-badge pill-slate" style="margin-bottom: 8px;">Proposition 4</div>
+            <div class="card-title">雙向價值共創與品牌極致忠誠</div>
+            <div class="card-body">
+              消費者不再單方面接受產品，而是透過主動回饋保養狀態、參與官方回收計畫共同維護產品生命週期，這種深度共創能激發前所未有的<strong>品牌擁護（Brand Advocacy）</strong>。
+            </div>
+          </div>
+        </div>
+
+        <div class="ins-card ins-card-subtle" style="margin-top: 14px; text-align: center; padding: 12px;">
+          <span style="font-size: 14px; font-weight: 600; color: var(--color-slate);">
+            🔄 閉環飛輪：原廠出廠 &rarr; 掃碼保固/零件維修 &rarr; 官方認證二手估價 &rarr; 逆向拆解再製造 &rarr; 再次流入市場
+          </span>
+        </div>
+
+        <aside class="notes">
+          【講稿備忘錄】
+          在傳統線性經濟下，賣出產品就是關係的終點。
+          但在服務主導邏輯與 P3、P4 下，賣出產品是價值的起點。透過 DPP，用戶可以一鍵預約官方維修、查詢替換零件、在用膩時按官方保證殘值回售。這種共創閉環，讓品牌的客戶終生價值（LTV）成倍放大。
+        </aside>
+      </section>
+
+      <!-- ========================================================
+           Slide 9: 企業戰略命題：精準分群與兩階段競爭優勢 (P5 & P6)
+           ======================================================== -->
+      <section>
+        <div class="ins-header">
+          <span>09. Strategic Roadmap</span>
+          <span class="pill-badge">Competitive Advantage</span>
+        </div>
+        
+        <h2 class="slide-title">法規演進下的動態競爭佈局：P5 與 P6</h2>
+        <p class="slide-subtitle">企業如何利用 DPP 數據資產與法規成熟度取得超額回報？</p>
+
+        <div class="ins-grid-2">
+          <div class="ins-card">
+            <div class="pill-badge pill-clay" style="margin-bottom: 8px;">Proposition 5</div>
+            <div class="card-title">微觀互動軌跡與極致精準分群</div>
+            <div class="card-body">
+              用戶掃描 DPP 查看「碳足跡」還是「人道勞動」？互動行為數據讓企業能精準定位特定客群的綠色偏好。<br>
+              <span style="font-size: 12px; color: var(--text-muted); display: block; margin-top: 6px;">
+                ⚠️ 前提條件：必須嚴格遵守 GDPR 隱私保護與用戶授權機制。
+              </span>
+            </div>
+          </div>
+
+          <div class="ins-card card-accent-sage">
+            <div class="pill-badge" style="margin-bottom: 8px;">Proposition 6</div>
+            <div class="card-title">法規成熟度二階段競爭優勢</div>
+            <div class="card-body">
+              <strong>階段一：自願導入期</strong><br>
+              優勢來自於<strong>「透明度領袖 (Transparency Leadership)」</strong>的先發差異化公關紅利。<br><br>
+              <strong>階段二：全面強制期</strong><br>
+              當所有人都有 DPP，優勢轉移至<strong>「超越法規最低門檻 (Beyond-Compliance)」</strong>之實質績效與高規格審計品質。
+            </div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          【講稿備忘錄】
+          很多企業老闆問：『歐盟 2026 年底才逐步強制，我現在提前做不是當冤大頭嗎？』
+          P6 明確給予否定！在現在的自願期率先落地，你就是業界的透明度先鋒，享有極高的品牌光環與議價權；而等到強制期大家都配備護照時，你已經在比拼『誰的回收率真正超越歐盟最低標準』的深水區了。
+        </aside>
+      </section>
+
+      <!-- ========================================================
+           Slide 10: 商業模式活動系統重構 (NICE 模型)
+           ======================================================== -->
+      <section>
+        <div class="ins-header">
+          <span>10. Business Model Integration</span>
+          <span class="pill-badge pill-slate">NICE Framework</span>
+        </div>
+        
+        <h2 class="slide-title">以 DPP 激活跨邊界活動系統</h2>
+        <p class="slide-subtitle">結合 Amit & Zott 商業模式理論，DPP 如何全方位驅動企業價值創造？</p>
+
+        <div class="ins-grid-2">
+          <div class="ins-card card-accent-sage">
+            <div class="card-header" style="color: var(--color-sage);">N &bull; Novelty (新穎性)</div>
+            <div class="card-title">創新型態商業模式</div>
+            <div class="card-body">解鎖「產品即服務 (PaaS)」、電池租賃、舊品翻新訂閱制等創新交易架構。</div>
+          </div>
+
+          <div class="ins-card card-accent-clay">
+            <div class="card-header" style="color: var(--color-clay);">L &bull; Lock-in (鎖定效應)</div>
+            <div class="card-title">專屬數位入口與轉換成本</div>
+            <div class="card-body">單品 DPP 成為原廠維修保養、官方認證耗材與二手機折抵的唯一指定通道，牢牢綁定用戶。</div>
+          </div>
+
+          <div class="ins-card card-accent-slate">
+            <div class="card-header" style="color: var(--color-slate);">C &bull; Complementarities (互補性)</div>
+            <div class="card-title">生態系多邊互補共贏</div>
+            <div class="card-body">與第三方獨立維修工坊、綠色物流、專業拆解廠實現跨組織資料共享，釋放生態協同綜效。</div>
+          </div>
+
+          <div class="ins-card">
+            <div class="card-header">E &bull; Efficiency (高效率)</div>
+            <div class="card-title">消除資訊摩擦與管理冗餘</div>
+            <div class="card-body">以統一開放的 API 與資料標準取代雜亂無章的人工報表，大幅壓低跨國碳審計與海關通關成本。</div>
+          </div>
+        </div>
+
+        <aside class="notes">
+          【講稿備忘錄】
+          將這篇論文與我們知識庫裡 Zott & Amit 的 NICE 商業模式框架一對照，大家就能看懂它的商業全貌。
+          新穎性帶來租賃模式、鎖定效應綁定售後、互補性串連外部回收商、效率性降低跨國報關成本。這就是為什麼我們說 DPP 是一場活動系統的架構變革！
+        </aside>
+      </section>
+
+      <!-- ========================================================
+           Slide 11: 總結與前沿文獻推薦
+           ======================================================== -->
+      <section>
+        <div class="ins-header">
+          <span>11. Conclusion & Literature</span>
+          <span class="pill-badge">Research Agenda</span>
+        </div>
+        
+        <h2 class="slide-title">總結與 Wiki 待 Ingest 延伸閱讀</h2>
+        <p class="slide-subtitle">以下前沿文獻均附直達下載連結，可一鍵儲存至 raw/ 目錄啟動下一輪知識庫 Ingest</p>
+
+        <div class="ins-grid-2">
+          <div class="ins-card">
+            <div class="card-header">Official EU Regulation</div>
+            <div class="card-title">歐盟 ESPR 生態設計法規全文 (2024/1781)</div>
+            <div class="card-body" style="font-size: 13px; margin-bottom: 12px;">
+              歐盟 DPP 法規母法，規定 2024~2030 年分階段強制實施標準與數位資料庫註冊要求。
+            </div>
+            <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32024R1781" target="_blank" class="download-pill-btn">
+              📄 點此直接下載官方 PDF
+            </a>
+          </div>
+
+          <div class="ins-card card-accent-sage">
+            <div class="card-header" style="color: var(--color-sage);">Springer Top Research 2026</div>
+            <div class="card-title">Digital Product Passports: IS Perspective</div>
+            <div class="card-body" style="font-size: 13px; margin-bottom: 12px;">
+              Petrik et al. (2026) 發表於 <em>Electronic Markets</em>，探討跨組織數據共享與邊界治理。
+            </div>
+            <a href="https://link.springer.com/content/pdf/10.1007/s12525-025-00789-x.pdf" target="_blank" class="download-pill-btn" style="background: var(--color-sage);">
+              📄 點此直接下載開源 PDF
+            </a>
+          </div>
+        </div>
+
+        <div class="ins-footer">
+          <span>Knowledge Loop &bull; 沉澱為 Wiki 持久資產</span>
+          <span>謝謝聆聽 ｜ Q & A 交流討論</span>
+        </div>
+
+        <aside class="notes">
+          【講稿備忘錄】
+          最後總結：數位產品護照正在從根本上重塑永續行銷的遊戲規則。它為真誠投入減碳的企業提供了不可偽造的競爭利刃。在我們知識庫的文末，已經附上歐盟官方 ESPR 法規與 2026 年最新頂刊文獻，點擊即可直接下載並丟入 raw 目錄進行 Ingest。謝謝大家！
+        </aside>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Reveal.js & KaTeX JS Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/dist/reveal.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/notes/notes.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.5.0/plugin/math/math.js"></script>
+  <script>
+    Reveal.initialize({
+      hash: true,
+      slideNumber: 'c/t',
+      controls: true,
+      progress: true,
+      center: false,
+      transition: 'fade',
+      transitionSpeed: 'fast',
+      plugins: [ RevealNotes, RevealMath.KaTeX ]
+    });
+  </script>
+</body>
+</html>
